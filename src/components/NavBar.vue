@@ -43,13 +43,29 @@ li {
 }
 
 a {
-  text-decoration: none; 
-  color: inherit;
-} 
+display: inline-block;
+position: relative;
+color: inherit;
+text-decoration: none;
+}
+a:after {
+content: "";
+display: block;
+margin: auto;
+height: 0.125rem;
+width: 0px;
+transition: all .5s;
+}
+
+a:hover:after {
+width: 100%;
+background: #D7BCE8;
+}
 
 .login_register {
   display: flex;
   justify-content: end;
+  margin-right: 2rem;
   
 } 
 
