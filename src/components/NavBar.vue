@@ -59,13 +59,13 @@ transition: all .5s;
 
 a:hover:after {
 width: 100%;
-background: #D7BCE8;
+background: #9171a5;
 }
 
 .login_register {
   display: flex;
   justify-content: end;
-  margin-right: 2rem;
+  margin-right: 4rem;
   
 } 
 
