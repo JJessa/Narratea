@@ -19,9 +19,13 @@ import Footer from '../components/Footer.vue'
 .parent_div {
   width: 90vw;
   height: 85vh;
-  background-color: #f55353;
+  background-image: url("../assets/images/narratea_fondo.png");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
   margin: 0 auto;
+  /* background-color: #DADADA; */
 }
 .top_child_div {
   width: 50%;
