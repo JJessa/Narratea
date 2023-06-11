@@ -106,12 +106,12 @@ import Footer from '../components/Footer.vue'
   margin: 0;  
 }
 .children_divs_img1 {
-  width: 30%;
+  width: 28%;
   height: 30%;
 }
 
 .children_divs_img2 {
-  width: 35%;
+  width: 33%;
   height: 34%;
 }
 
