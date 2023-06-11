@@ -53,7 +53,7 @@ import Footer from '../components/Footer.vue'
 .top_child_div {
   width: 60%;
   height: 20%;
-  background-color: #FFFFFF65;
+  background-color: #FFFFFF80;
   position: absolute;
   top: 35%;
   left: 50%;
@@ -86,7 +86,7 @@ import Footer from '../components/Footer.vue'
 .children_divs {
   width: 25%;
   height: 25%;
-  background-color: #FFFFFF65;
+  background-color: #FFFFFF80;
 }
 
 .about_link {
