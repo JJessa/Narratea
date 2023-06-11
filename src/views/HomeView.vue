@@ -12,16 +12,18 @@
   </div>
   <div class="total_children_div">
     <div class="about_us children_divs">
-      <div>
-        <img />
+      <router-link to="/about" class="about_link">
+      <div class="children_divs_title">
+        <img src="../assets/images/pluma.png" alt="pluma_estilografica" class="children_divs_img1">
         <h4>Sobre Nosotros</h4>
       </div>
       <p> Conoce más acerca de quiénes somos, y cómo trabajamos para crear una plataforma de calidad</p>
+    </router-link>
     </div>
     <div class="stories children_divs">
-      <div>
-        <img />
-        <h4>Relatos</h4>
+      <div class="children_divs_title">
+        <img src="../assets/images/letras.png" alt="start_now" class="children_divs_img2">
+        <h4 id="stories_children_div_title">Relatos</h4>
       </div>
       <p> Déjate llevar por la imaginación y descubre nuevas historias explorando nuestros relatos cortos</p>
     </div>
@@ -51,7 +53,7 @@ import Footer from '../components/Footer.vue'
 .top_child_div {
   width: 60%;
   height: 20%;
-  backdrop-filter: blur(10px);
+  background-color: #FFFFFF65;
   position: absolute;
   top: 35%;
   left: 50%;
@@ -80,9 +82,45 @@ import Footer from '../components/Footer.vue'
   transform: translate(-50%, -50%);
   position:absolute;
 }
+
 .children_divs {
   width: 25%;
   height: 25%;
-  backdrop-filter: blur(10px);
+  background-color: #FFFFFF65;
+}
+
+.about_link {
+  text-decoration: none;
+  color: inherit;
+}
+.children_divs_title {
+  display: flex;  
+  align-items: center;  
+}
+
+#stories_children_div_title {
+  margin-left: 2rem;
+}
+.children_divs_title h4 {
+  font-size: 2rem;
+  margin: 0;  
+}
+.children_divs_img1 {
+  width: 30%;
+  height: 30%;
+}
+
+.children_divs_img2 {
+  width: 35%;
+  height: 34%;
+}
+
+
+.children_divs p {
+  margin-top: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
 }
 </style>
