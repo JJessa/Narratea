@@ -21,11 +21,13 @@
     </router-link>
     </div>
     <div class="stories children_divs">
+      <router-link to="/Stories" class="stories_link">
       <div class="children_divs_title">
         <img src="../assets/images/letras.png" alt="start_now" class="children_divs_img2">
         <h4 id="stories_children_div_title">Relatos</h4>
       </div>
       <p> Déjate llevar por la imaginación y descubre nuevas historias explorando nuestros relatos cortos</p>
+    </router-link>
     </div>
   </div>
   </div>
@@ -89,7 +91,7 @@ import Footer from '../components/Footer.vue'
   background-color: #FFFFFF80;
 }
 
-.about_link {
+.about_link, .stories_link {
   text-decoration: none;
   color: inherit;
 }

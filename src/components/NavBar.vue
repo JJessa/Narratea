@@ -2,8 +2,10 @@
 <nav>
   <ul>
     <div class="left_menu">
+      <router-link id="logo_hover" to="/"><img class="img_logo" src="../assets/images/Narratea-logo.png" alt="Narratea logo"></router-link>
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/about">Sobre Nosotros</router-link></li>
+      <li><router-link to="/Stories">Relatos</router-link></li>
     </div>
     <div class="login_register">
       <li><a href="contacto.html">Register</a></li> 
@@ -22,7 +24,13 @@
 
 
 <style scoped>
+.img_logo {
+  height: 3.5rem;;
+}
 
+#logo_hover:hover:after {
+  background: #ffffff;
+}
 
 ul{	
 	margin-top: 2.5rem;
@@ -34,6 +42,7 @@ ul{
 .left_menu {
   display: flex;
   justify-content: start;
+  align-items: center;
   
 } 
 
@@ -66,7 +75,10 @@ background: #9171a5;
   display: flex;
   justify-content: end;
   margin-right: 4rem;
+  margin-top: 1.5rem;
   
 } 
+
+
 
 </style>

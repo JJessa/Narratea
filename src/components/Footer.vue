@@ -13,7 +13,7 @@
       
     p {
     text-align: center;
-    position:fixed;
+    /* position:fixed; */
     left:0px;
     bottom:0px;
     height:30px;
