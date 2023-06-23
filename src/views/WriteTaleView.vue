@@ -2,11 +2,11 @@
   <NavBar />
   <div class="big_div">
     <div class="create_div">
-        <form>         
-          <input type="text" id="titulo" placeholder="Título" required>
-          <textarea id="contenido" placeholder="Comienza a escribir" required></textarea>
+        <form @submit.prevent>         
+          <input type="text" id="titulo" v-model="title" placeholder="Título" required>
+          <textarea id="contenido" v-model="description" placeholder="Comienza a escribir" required></textarea>
         <div>
-          <button type="submit">Enviar</button>
+          <button @click="createPost">Enviar</button>
         </div>
         </form>
       </div>
@@ -19,6 +19,31 @@
 <script setup>
 import NavBar from '../components/NavBar.vue'
 import Footer from '../components/Footer.vue'
+import {ref} from "vue"
+import axios from "axios"
+
+
+
+let title = ref("")
+let description = ref("")
+
+const url = 'http://127.0.0.1:5000/api/relatos';
+
+
+async function createPost(){
+  try {
+  await axios.post(url, {
+    titulo: title.value,
+    relato: description.value
+  })
+  location.reload()
+}catch(error){
+  console.log(error)
+}
+}
+
+
+
 </script>
 
 <style scoped>
