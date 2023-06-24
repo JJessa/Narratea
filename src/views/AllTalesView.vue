@@ -8,8 +8,8 @@
 
         <!-- {{ console.log('Relato:', relato) }} -->
 
-        <h2>Titulo{{ relato.titulo }}</h2>
-        <p>Relato{{ relato.relato }}</p>
+        <h2>{{ relato.titulo }}</h2>
+        <p>{{ relato.relato }}</p>
         
         <button @click="editPost(relato.id)">Editar</button>
         <button @click="deletePost(relato.id)">Eliminar</button>
