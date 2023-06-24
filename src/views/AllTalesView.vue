@@ -1,64 +1,47 @@
 <template>
+  <NavBar />
 
-<NavBar />
-    <h1>Relatos</h1>
-   
-    
-      <div v-for="relato in relatos" :key="relato.id">
+  <div>
+    <div v-for="relato in relatos" :key="relato.id">
+      <h2>
+        <span v-if="!relato.editando">{{ relato.titulo }}</span>
+        <input v-else type="text" v-model="relato.titulo" @keydown.enter="guardarEdicion(relato)">
+      </h2>
+      <p>
+        <span v-if="!relato.editando">{{ relato.relato }}</span>
+        <textarea v-else v-model="relato.relato" @keydown.enter="guardarEdicion(relato)"></textarea>
+      </p>
 
-        <!-- {{ console.log('Relato:', relato) }} -->
+      <button @click="editarRelato(relato)">{{ relato.editando ? 'Guardar' : 'Editar' }}</button>
+      <button @click="deletePost(relato.id)">Eliminar</button>
+    </div>
+  </div>
 
-        <h2>{{ relato.titulo }}</h2>
-        <p>{{ relato.relato }}</p>
-        
-        <button @click="editPost(relato.id)">Editar</button>
-        <button @click="deletePost(relato.id)">Eliminar</button>
-   
-      </div>
-
-
-      <div v-show="showEdit">
-        <form @submit.prevent>
-            <div>
-
-              <input type="text" id="titulo" v-model="editTitle">
-              <textarea id="contenido" v-model="editDescription" ></textarea>
-
-            </div>        
-        </form>
-
-            <div>
-              <button @click="sendPost">Enviar</button>
-            </div>
-      </div>
-<Footer />
-
+  <Footer />
 </template>
 
 <script setup>
 import NavBar from '../components/NavBar.vue'
 import Footer from '../components/Footer.vue'
 import axios from 'axios'
-import {ref, onMounted} from 'vue'
+import { ref, onMounted } from 'vue'
 
 let relatos = ref("")
-let showEdit = ref(false)
-let editTitle = ref("")
-let editDescription = ref("")
 
-
-onMounted(() =>{
+onMounted(() => {
   getAllPosts()
 })
 
-
-async function getAllPosts(){
+async function getAllPosts() {
   const url = 'http://127.0.0.1:5000/api/relatos';
 
   try {
     let response = await axios.get(url)
-    relatos.value = await response.data.relatos
-  }catch(error){
+    relatos.value = await response.data.relatos.map(relato => ({
+      ...relato,
+      editando: false
+    }))
+  } catch (error) {
     console.log(error)
   }
 }
@@ -73,25 +56,21 @@ async function deletePost(id) {
   }
 }
 
-// Put method function
+function editarRelato(relato) {
+  relato.editando = !relato.editando
 
-let getId = ref("")
-
-function editPost(id){
-  getId.value = id
-  console.log("getID", getId.value)
-  showEdit.value = true
+  if (!relato.editando) {
+    guardarEdicion(relato)
+  }
 }
 
-
-async function sendPost(){
+async function guardarEdicion(relato) {
   try {
-    await axios.put(`http://localhost:5000/api/relatos/${getId.value}`, {
-      titulo: editTitle.value,
-      relato: editDescription.value
+    await axios.put(`http://localhost:5000/api/relatos/${relato.id}`, {
+      titulo: relato.titulo,
+      relato: relato.relato
     })
-      location.reload()
-  }catch(error){
+  } catch (error) {
     console.log(error)
   }
 }
