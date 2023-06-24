@@ -14,7 +14,23 @@
         <button @click="editPost(relato.id)">Editar</button>
         <button @click="deletePost(relato.id)">Eliminar</button>
    
-  </div>
+      </div>
+
+
+      <div v-show="showEdit">
+        <form @submit.prevent>
+            <div>
+
+              <input type="text" id="titulo" v-model="editTitle">
+              <textarea id="contenido" v-model="editDescription" ></textarea>
+
+            </div>        
+        </form>
+
+            <div>
+              <button @click="sendPost">Enviar</button>
+            </div>
+      </div>
 <Footer />
 
 </template>
@@ -26,6 +42,10 @@ import axios from 'axios'
 import {ref, onMounted} from 'vue'
 
 let relatos = ref("")
+let showEdit = ref(false)
+let editTitle = ref("")
+let editDescription = ref("")
+
 
 onMounted(() =>{
   getAllPosts()
@@ -53,4 +73,26 @@ async function deletePost(id) {
   }
 }
 
+// Put method function
+
+let getId = ref("")
+
+function editPost(id){
+  getId.value = id
+  console.log("getID", getId.value)
+  showEdit.value = true
+}
+
+
+async function sendPost(){
+  try {
+    await axios.put(`http://localhost:5000/api/relatos/${getId.value}`, {
+      titulo: editTitle.value,
+      relato: editDescription.value
+    })
+      location.reload()
+  }catch(error){
+    console.log(error)
+  }
+}
 </script>
