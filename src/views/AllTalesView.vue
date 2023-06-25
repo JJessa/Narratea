@@ -1,7 +1,10 @@
 <template>
   <NavBar />
   
-    
+  <div class="div_flex">
+    <div class="image">
+      <img src="../assets/images/narratea_img.png" alt="Imagen" />
+    </div>
       <div class="cards" v-for="relato in relatos" :key="relato.id">
         <h2>
           <span v-if="!relato.editando">{{ relato.titulo }}</span>
@@ -15,7 +18,7 @@
         <button @click="editarRelato(relato)">{{ relato.editando ? 'Guardar' : 'Editar' }}</button>
         <button @click="deletePost(relato.id)">Eliminar</button>
       </div>
-  
+  </div>
   
 
   <Footer />
@@ -77,6 +80,23 @@ async function guardarEdicion(relato) {
 }
 </script>
 <style scoped>
+
+.div_flex {
+  display: flex;
+  align-items: flex-start;
+}
+
+.image {
+  width: 8vw;
+  height: 90vh; 
+  display: flex;
+  margin-left: 2rem;  
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+}
 .cards {
   background-color: #f5f5f5;
   text-align: center;
