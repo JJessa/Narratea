@@ -5,6 +5,7 @@
     <div class="image">
       <img src="../assets/images/narratea_img.png" alt="Imagen" />
     </div>
+    <div class="card_div">
       <div class="cards" v-for="relato in relatos" :key="relato.id">
         <h2>
           <span v-if="!relato.editando">{{ relato.titulo }}</span>
@@ -15,9 +16,12 @@
           <textarea v-else v-model="relato.relato" @keydown.enter="guardarEdicion(relato)"></textarea>
         </p>
         <input class="read_more_button" type="checkbox">
-        <button @click="editarRelato(relato)">{{ relato.editando ? 'Guardar' : 'Editar' }}</button>
-        <button @click="deletePost(relato.id)">Eliminar</button>
+        <div class="buttons">
+        <button  @click="editarRelato(relato)">{{ relato.editando ? 'Guardar' : 'Editar' }}</button>
+        <button  @click="deletePost(relato.id)">Eliminar</button>
+        </div>
       </div>
+    </div>
   </div>
   
 
@@ -78,34 +82,50 @@ async function guardarEdicion(relato) {
     console.log(error)
   }
 }
+
+
 </script>
 <style scoped>
 
 .div_flex {
   display: flex;
   align-items: flex-start;
+
 }
 
 .image {
   width: 8vw;
-  height: 90vh; 
+  height: 85vh; 
   display: flex;
   margin-left: 2rem;  
+  position: fixed;
+  top:10;
 }
 
 .image img {
   width: 100%;
   height: auto;
+
+}
+
+.card_div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 auto;
+  
 }
 .cards {
   background-color: #f5f5f5;
   text-align: center;
   width: 50vw;
-  margin: 0 auto;
+  margin-bottom: 1rem;
   font-size: 1.2rem;
   padding-left: 2rem;
   padding-right: 2rem;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .short-text {
@@ -134,6 +154,7 @@ async function guardarEdicion(relato) {
   border-radius: .25em;
   cursor: pointer;
   margin-top: 1rem;
+  align-self: flex-start;
 }
 
 .read_more_button:hover {
@@ -151,4 +172,16 @@ async function guardarEdicion(relato) {
 .short-text:has(+ .read_more_button:checked) {
   max-height: none;
 }
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.buttons button {
+  margin: 0 0.5rem;
+}
+
+
 </style>
