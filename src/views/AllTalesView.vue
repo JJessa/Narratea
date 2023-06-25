@@ -1,21 +1,22 @@
 <template>
   <NavBar />
-
-  <div>
-    <div v-for="relato in relatos" :key="relato.id">
-      <h2>
-        <span v-if="!relato.editando">{{ relato.titulo }}</span>
-        <input v-else type="text" v-model="relato.titulo" @keydown.enter="guardarEdicion(relato)">
-      </h2>
-      <p>
-        <span v-if="!relato.editando">{{ relato.relato }}</span>
-        <textarea v-else v-model="relato.relato" @keydown.enter="guardarEdicion(relato)"></textarea>
-      </p>
-
-      <button @click="editarRelato(relato)">{{ relato.editando ? 'Guardar' : 'Editar' }}</button>
-      <button @click="deletePost(relato.id)">Eliminar</button>
-    </div>
-  </div>
+  
+    
+      <div class="cards" v-for="relato in relatos" :key="relato.id">
+        <h2>
+          <span v-if="!relato.editando">{{ relato.titulo }}</span>
+          <input v-else type="text" v-model="relato.titulo" @keydown.enter="guardarEdicion(relato)">
+        </h2>
+        <p class="short-text">
+          <span v-if="!relato.editando">{{ relato.relato }}</span>
+          <textarea v-else v-model="relato.relato" @keydown.enter="guardarEdicion(relato)"></textarea>
+        </p>
+        <input class="read_more_button" type="checkbox">
+        <button @click="editarRelato(relato)">{{ relato.editando ? 'Guardar' : 'Editar' }}</button>
+        <button @click="deletePost(relato.id)">Eliminar</button>
+      </div>
+  
+  
 
   <Footer />
 </template>
@@ -75,3 +76,59 @@ async function guardarEdicion(relato) {
   }
 }
 </script>
+<style scoped>
+.cards {
+  background-color: #f5f5f5;
+  text-align: center;
+  width: 50vw;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+}
+
+.short-text {
+  --max-lines: 5;
+  --line-height: 1.4;
+  max-height: calc(var(--max-lines) * 1em * var(--line-height));
+  line-height: var(--line-height);
+  overflow: hidden;
+  position: relative;
+}
+
+.short-text:has(+ .read_more_button:not(:checked))::before {
+  content: "";
+  position: absolute;
+  height:  calc(1em * var(--line-height));
+  width: 100%;
+  bottom: 0;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent, #f5f5f5);
+}
+
+.read_more_button {
+  appearance: none;
+  border: 1px solid black;
+  padding: .5em;
+  border-radius: .25em;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.read_more_button:hover {
+  background-color: #CCC;
+}
+
+.read_more_button::before {
+  content: "Leer más";
+}
+
+.read_more_button:checked::before {
+  content:"Leer menos";
+}
+
+.short-text:has(+ .read_more_button:checked) {
+  max-height: none;
+}
+</style>
