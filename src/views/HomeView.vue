@@ -60,7 +60,7 @@ import Footer from '../components/Footer.vue'
   top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
+  border-radius: .8rem;
 }
 
 .home_title {
@@ -89,6 +89,7 @@ import Footer from '../components/Footer.vue'
   width: 25%;
   height: 25%;
   background-color: #FFFFFF80;
+  border-radius: .8rem;
 }
 
 .about_link, .stories_link {
@@ -110,6 +111,7 @@ import Footer from '../components/Footer.vue'
 .children_divs_img1 {
   width: 28%;
   height: 30%;
+  border-radius: .8rem;
 }
 
 .children_divs_img2 {

@@ -5,6 +5,7 @@
       <router-link id="logo_hover" to="/"><img class="img_logo" src="../assets/images/Narratea-logo.png" alt="Narratea logo"></router-link>
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/about">Sobre Nosotros</router-link></li>
+      <li><router-link to="/write">Escribe tu relato</router-link></li>
       <li><router-link to="/Stories">Relatos</router-link></li>
     </div>
     <div class="login_register">

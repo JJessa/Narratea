@@ -9,7 +9,7 @@
       <div class="cards" v-for="relato in relatos" :key="relato.id">
         <h2>
           <span v-if="!relato.editando">{{ relato.titulo }}</span>
-          <input v-else type="text" v-model="relato.titulo" @keydown.enter="guardarEdicion(relato)">
+          <input class="input_title" v-else type="text" v-model="relato.titulo" @keydown.enter="guardarEdicion(relato)">
         </h2>
         <p class="short-text">
           <span v-if="!relato.editando">{{ relato.relato }}</span>
@@ -17,8 +17,8 @@
         </p>
         <input class="read_more_button" type="checkbox">
         <div class="buttons">
-        <button  @click="editarRelato(relato)">{{ relato.editando ? 'Guardar' : 'Editar' }}</button>
-        <button  @click="deletePost(relato.id)">Eliminar</button>
+        <button class="edit_button" @click="editarRelato(relato)">{{ relato.editando ? 'Guardar' : 'Editar' }}</button>
+        <button   class="delete_button" @click="deletePost(relato.id)">Eliminar</button>
         </div>
       </div>
     </div>
@@ -90,6 +90,7 @@ async function guardarEdicion(relato) {
 .div_flex {
   display: flex;
   align-items: flex-start;
+  margin-top: 2rem;
 
 }
 
@@ -118,15 +119,17 @@ async function guardarEdicion(relato) {
 .cards {
   background-color: #f5f5f5;
   text-align: center;
-  width: 50vw;
-  margin-bottom: 1rem;
+  width: 40vw;
+  margin-bottom: 2.5rem;
   font-size: 1.2rem;
   padding-left: 2rem;
   padding-right: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 4rem;
 }
+
 
 .short-text {
   --max-lines: 5;
@@ -149,12 +152,13 @@ async function guardarEdicion(relato) {
 
 .read_more_button {
   appearance: none;
-  border: 1px solid black;
-  padding: .5em;
-  border-radius: .25em;
+  background-color: hsl(277, 47%, 67%);
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.8rem;
+  align-self: center;
   cursor: pointer;
-  margin-top: 1rem;
-  align-self: flex-start;
 }
 
 .read_more_button:hover {
@@ -177,11 +181,35 @@ async function guardarEdicion(relato) {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  padding: 1.5rem;
 }
 
 .buttons button {
   margin: 0 0.5rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  background-color: #91CAE2;
+
 }
 
+.buttons button:hover {
+  background-color: #CCC;
+}
 
+.input_title {
+  width: 40vw;
+  border:none;
+  font-size: 1.5rem;
+}
+
+textarea {
+  width: 40vw;
+  height: 50vh;
+  border:none;
+  resize: none;
+  font-size: 1rem;
+}
 </style>
