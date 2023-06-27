@@ -119,18 +119,21 @@ async function guardarEdicion(relato) {
 .cards {
   background-color: #f5f5f5;
   text-align: center;
-  width: 40vw;
-  margin-bottom: 2.5rem;
+  width: 38vw;
+  margin-bottom: 3.5rem;
   font-size: 1.2rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 4rem;
 }
 
-
+h2 {
+  font-size: 2.2rem;
+  margin-top: 2.5rem;
+}
 .short-text {
   --max-lines: 5;
   --line-height: 1.4;
