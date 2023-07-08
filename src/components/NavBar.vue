@@ -1,5 +1,10 @@
 <template>
 <nav>
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn">
+    <img src="../assets/images/hamburguer-menu-smaller.jpg" alt="menu hambuerguesa movil">
+
+  </label>
   <ul>
     <div class="left_menu">
       <router-link id="logo_hover" to="/"><img class="img_logo" src="../assets/images/Narratea-logo.png" alt="Narratea logo"></router-link>
@@ -26,8 +31,8 @@
 
 <style scoped>
 .img_logo {
-  height: 3.5rem;
-  margin-left: 1.5rem;
+  height: 4rem;
+  margin-left: 1rem;
 }
 
 #logo_hover:hover:after {
@@ -50,7 +55,7 @@ ul{
 
 li {
   margin: 0 0.625rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 a {
@@ -77,10 +82,53 @@ background: #9171a5;
   display: flex;
   justify-content: end;
   margin-right: 4rem;
-  margin-top: 1.5rem;
-  
+  margin-top: 1.5rem;  
 } 
 
+.checkbtn {
+  display: none;
+  padding: 1rem;
+  cursor: pointer;
+}
 
+#check {
+  display: none;
+}
+
+@media (max-width: 850px) {
+
+.img_logo {
+  display: none;
+}  
+.checkbtn {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+ul {
+  position: fixed;
+  width: 60%;
+  height: 100vh;
+  background: #ffffff;
+  top: 0;
+  left: -100%;
+  transition: all .5s;
+  z-index: 1;
+  display: block;
+}
+
+.left_menu {
+
+  display: block;
+  /* margin: 3.125rem 0; */
+  line-height: 2.875rem;
+}
+
+
+#check:checked ~ ul {
+  left: 0;
+}
+}
 
 </style>
