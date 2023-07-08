@@ -84,6 +84,7 @@ input {
   border: none;
   text-align: center;
   font-size: 2rem;
+  font-family: 'Lobster', cursive;
 }
 
 textarea {
@@ -99,16 +100,17 @@ textarea {
 
 input::placeholder {
     font-size: 2.5rem;
+    font-family: 'Lobster', cursive;
 }
 
 ::placeholder {
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding-left: 0.5rem;
 }
 
 button {
   background-color: hsl(277, 47%, 67%);
-  padding: 0.8rem 3rem;
+  padding: 0.8rem 2rem;
   font-size: 1.3rem;
   border: none;
   border-radius: 0.8rem;
