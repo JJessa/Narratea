@@ -2,7 +2,7 @@
 <nav>
   <input type="checkbox" id="check">
   <label for="check" class="checkbtn">
-    <img src="../assets/images/hamburguer-menu-smaller.jpg" alt="menu hambuerguesa movil">
+    <img src="../assets/images/responsive-menu.png" alt="menu hambuerguesa movil">
 
   </label>
   <ul>
@@ -87,8 +87,13 @@ background: #9171a5;
 
 .checkbtn {
   display: none;
-  padding: 1rem;
+  padding: 2rem;
   cursor: pointer;
+}
+
+.checkbtn img {
+  width: 3rem;
+  height: 2.5rem;
 }
 
 #check {
@@ -121,7 +126,7 @@ ul {
 .left_menu {
 
   display: block;
-  /* margin: 3.125rem 0; */
+  margin: 3.125rem 0;
   line-height: 2.875rem;
 }
 
