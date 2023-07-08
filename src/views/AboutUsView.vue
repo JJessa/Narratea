@@ -115,10 +115,10 @@ textarea {
 
 button {
   background-color: hsl(277, 47%, 67%);
-  padding: 0.8rem 3rem;
+  padding: 0.8rem 2rem;
   font-size: 1.3rem;
   border: none;
   border-radius: 0.8rem;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
  }
 </style>

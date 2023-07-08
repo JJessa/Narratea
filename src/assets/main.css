@@ -35,7 +35,7 @@ a,
 } */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lobster&display=swap');
 
-h1, h4, h2 {
+h1, h4, h2, button {
   font-family: 'Lobster', cursive;
 }
 
