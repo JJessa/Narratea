@@ -53,7 +53,7 @@ import Footer from '../components/Footer.vue'
   margin-top: 5rem;
 }
 .div_questions h2 {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
 }
 .div_questions p {
   font-size: 1.3rem;
@@ -70,8 +70,8 @@ import Footer from '../components/Footer.vue'
 
 .background_div h2 {
   text-align: center;
-  font-size: 3.5rem;
-  margin: 0 auto;
+  font-size: 2.5rem;
+  margin: .5rem auto;
 }
 .form_div {
   width: 80%;
@@ -109,8 +109,8 @@ textarea {
 }
 
 ::placeholder {
-  font-size: 1rem;
-  padding-left: 0.5rem;
+  font-size: 1.15rem;
+  padding: 1rem;
 }
 
 button {

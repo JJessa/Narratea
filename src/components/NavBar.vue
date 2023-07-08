@@ -26,7 +26,8 @@
 
 <style scoped>
 .img_logo {
-  height: 3.5rem;;
+  height: 3.5rem;
+  margin-left: 1.5rem;
 }
 
 #logo_hover:hover:after {
@@ -49,7 +50,7 @@ ul{
 
 li {
   margin: 0 0.625rem;
-  
+  font-size: 1.2rem;
 }
 
 a {

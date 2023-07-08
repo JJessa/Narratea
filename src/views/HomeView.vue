@@ -8,7 +8,7 @@
   </div>
   <div class="top_child_div">
       <p class="home_parraf">Escribe, publica y comparte tus relatos cortos con otros escritores y lectores apasionados por la literatura</p> 
-      <p class="home_parraf">¡Da vida a tus historias y deja que tus palabras vuelen!</p> 
+      <p id="motto" class="home_parraf">¡Da vida a tus historias y deja que tus palabras vuelen!</p> 
   </div>
   <div class="total_children_div">
     <div class="about_us children_divs">
@@ -17,7 +17,7 @@
         <img src="../assets/images/pluma.png" alt="pluma_estilografica" class="children_divs_img1">
         <h4>Sobre Nosotros</h4>
       </div>
-      <p> Conoce más acerca de quiénes somos, y cómo trabajamos para crear una plataforma de calidad</p>
+      <p id="children_paragraph1"> Conoce más acerca de quiénes somos, y cómo trabajamos para crear una plataforma de calidad</p>
     </router-link>
     </div>
     <div class="stories children_divs">
@@ -26,7 +26,7 @@
         <img src="../assets/images/letras.png" alt="start_now" class="children_divs_img2">
         <h4 id="stories_children_div_title">Relatos</h4>
       </div>
-      <p> Déjate llevar por la imaginación y descubre nuevas historias explorando nuestros relatos cortos</p>
+      <p id="children_paragraph2"> Déjate llevar por la imaginación y descubre nuevas historias explorando nuestros relatos cortos</p>
     </router-link>
     </div>
   </div>
@@ -53,18 +53,18 @@ import Footer from '../components/Footer.vue'
   margin: 0 auto;
 }
 .top_child_div {
-  width: 60%;
-  height: 20%;
+  width: 50%;
+  height: 17%;
   background-color: #FFFFFF80;
   position: absolute;
-  top: 35%;
+  top: 33%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: .8rem;
 }
 
 .home_title {
-  font-size: 4rem; 
+  font-size: 3rem; 
   position: absolute;
   top: 10%;
   left: 50%;
@@ -72,7 +72,12 @@ import Footer from '../components/Footer.vue'
 }
 .home_parraf {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  margin-top: 0.8rem;
+}
+
+#motto {
+  margin-top: -1.5rem;
 }
 
 .total_children_div {
@@ -105,7 +110,7 @@ import Footer from '../components/Footer.vue'
   margin-left: 2rem;
 }
 .children_divs_title h4 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   margin: 0;  
 }
 .children_divs_img1 {
@@ -124,7 +129,7 @@ import Footer from '../components/Footer.vue'
   margin-top: 0;
   padding-left: 1rem;
   padding-right: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.32rem;
   text-align: center;
 }
 </style>
