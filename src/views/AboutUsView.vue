@@ -59,8 +59,8 @@ import Footer from '../components/Footer.vue'
   font-size: 1.3rem;
 }
 .background_div {
-  width: 30vw;
-  height: 85vh;
+  width: 28vw;
+  height: 80vh;
   background-image: url("../assets/images/narratea_fondo.png");
   background-size:cover;
   background-repeat: no-repeat;
@@ -74,8 +74,8 @@ import Footer from '../components/Footer.vue'
   margin: .5rem auto;
 }
 .form_div {
-  width: 80%;
-  height: 80%;
+  width: 85%;
+  height: 75%;
   background-color: #FFFFFF80;
   position: absolute;
   top: 50%;
@@ -119,6 +119,42 @@ button {
   font-size: 1.3rem;
   border: none;
   border-radius: 0.8rem;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
  }
+
+ @media (max-width: 850px)  {
+  .div_total {
+  display: block;
+}
+
+.div_questions {
+  width: 80vw;
+  margin: 0 auto;
+}
+.background_div {
+  width: 80vw;
+  height: 80vh;
+  margin: 4rem auto;
+}
+.background_div h2 {
+  font-size: 2rem;
+  padding: 1rem;
+}
+.form_div {
+  width: 85%;
+  height: 80%;
+}
+input {
+  width: 60vw; 
+  margin-top: 2rem;
+  border: none;
+}
+
+textarea {
+  width: 60vw; 
+  margin-top: 3rem;
+}
+
+}
 </style>
