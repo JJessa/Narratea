@@ -7,7 +7,7 @@
     <h1 >Narratea</h1>
   </div>
   <div class="top_child_div">
-      <p class="home_parraf">Escribe, publica y comparte tus relatos cortos con otros escritores y lectores apasionados por la literatura</p> 
+      <p class="home_parraf">Escribe, publica y comparte tus relatos cortos con otros escritores y lectores apasionados por la literatura.</p> 
       <p id="motto" class="home_parraf">¡Da vida a tus historias y deja que tus palabras vuelen!</p> 
   </div>
   <div class="total_children_div">
@@ -26,7 +26,7 @@
         <img src="../assets/images/letras.png" alt="start_now" class="children_divs_img2">
         <h4 id="stories_children_div_title">Relatos</h4>
       </div>
-      <p id="children_paragraph2"> Déjate llevar por la imaginación y descubre nuevas historias explorando nuestros relatos cortos</p>
+      <p id="children_paragraph2"> Déjate llevar por la imaginación y descubre nuevas historias explorando nuestros relatos</p>
     </router-link>
     </div>
   </div>
@@ -53,11 +53,11 @@ import Footer from '../components/Footer.vue'
   margin: 0 auto;
 }
 .top_child_div {
-  width: 50%;
-  height: 17%;
+  width: 50vw;
+  height: auto;
   background-color: #FFFFFF80;
   position: absolute;
-  top: 33%;
+  top: 36%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: .8rem;
@@ -77,11 +77,11 @@ import Footer from '../components/Footer.vue'
 }
 
 #motto {
-  margin-top: -1.5rem;
+  margin-top: 1.5rem;
 }
 
 .total_children_div {
-  width: 77%;
+  width: 77vw;
   display: flex;
   justify-content: space-around;
   top: 70%;
@@ -91,8 +91,8 @@ import Footer from '../components/Footer.vue'
 }
 
 .children_divs {
-  width: 25%;
-  height: 25%;
+  width: 15vw;
+  height: auto;
   background-color: #FFFFFF80;
   border-radius: .8rem;
 }
@@ -131,5 +131,47 @@ import Footer from '../components/Footer.vue'
   padding-right: 1rem;
   font-size: 1.32rem;
   text-align: center;
+}
+
+@media (max-width: 850px) {
+
+  .parent_div {
+  height: 100vh;
+  background-image: url("../assets/images/naratea-background-responsive.png");
+  background-size: cover;
+}
+
+  .home_title {
+  font-size: 2rem; 
+  margin-top: -2rem;
+}
+  .top_child_div {
+  width: 70vw;
+  top: 28%;  
+  padding: .6rem;
+}
+.home_parraf {
+  font-size: 1.3rem;
+}
+.total_children_div {
+  width: 75vw;
+  display: block;
+  margin-top: 2rem;
+}
+.children_divs {
+  width: 65vw;
+  margin: 1.5rem auto;
+  padding: .001rem;
+}
+.children_divs_img1, .children_divs_img2 {
+  display: none;
+}
+ .children_divs_title h4 {
+ margin: .5rem auto;
+ }
+
+ #stories_children_div_title {
+  margin: .5rem auto;
+ }
 }
 </style>
