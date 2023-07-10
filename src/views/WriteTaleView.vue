@@ -5,7 +5,7 @@
         <form @submit.prevent>         
           <input type="text" id="titulo" v-model="title" placeholder="Título" required>
           <textarea id="contenido" v-model="description" placeholder="Comienza a escribir" required></textarea>
-        <div>
+        <div class="btn-padding">
           <button @click="createPost">Enviar</button>
         </div>
         </form>
@@ -80,7 +80,7 @@ input {
   background-color: #F4F4F4;
   height: 6vh;
   width: 40vw; 
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   border: none;
   text-align: center;
   font-size: 2rem;
@@ -89,7 +89,7 @@ input {
 
 textarea {
   background-color: #F4F4F4;
-  height: 35vh;
+  height: 40vh;
   width: 35vw; 
   margin-top: 3.5rem;
   border: none;
@@ -114,6 +114,23 @@ button {
   font-size: 1.3rem;
   border: none;
   border-radius: 0.8rem;
-  margin-top: 4rem;
+ }
+
+ .btn-padding {
+  padding: 2rem;
+ }
+
+ @media (max-width: 850px) {
+  .create_div {
+  width: 95%;
+  height: 95%;
+}
+input {
+  width: 80vw; 
+}
+
+textarea {
+  width: 65vw; 
+}
  }
 </style>
