@@ -60,7 +60,7 @@ import Footer from '../components/Footer.vue'
 }
 .background_div {
   width: 28vw;
-  height: 80vh;
+  height: 75vh;
   background-image: url("../assets/images/narratea_fondo.png");
   background-size:cover;
   background-repeat: no-repeat;
@@ -75,10 +75,10 @@ import Footer from '../components/Footer.vue'
 }
 .form_div {
   width: 85%;
-  height: 75%;
+  height: 85%;
   background-color: #FFFFFF80;
   position: absolute;
-  top: 50%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
