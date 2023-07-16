@@ -1,10 +1,10 @@
 <template>
   <NavBar />
   
-  <div class="div_flex">
-    <div class="image">
+  <!-- <div class="div_flex"> -->
+    <!-- <div class="image">
       <img src="../assets/images/narratea_img.png" alt="Imagen" />
-    </div>
+    </div> -->
     <div class="card_div">
       <div class="cards" v-for="relato in relatos" :key="relato.id">
         <h2>
@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-  </div>
+  <!-- </div> -->
   
 
   <Footer />
@@ -87,55 +87,69 @@ async function guardarEdicion(relato) {
 </script>
 <style scoped>
 
-.div_flex {
+/* .div_flex {
   display: flex;
   align-items: flex-start;
   margin-top: 2rem;
 
-}
+} */
 
-.image {
+/* .image {
   width: 8vw;
   height: 85vh; 
   display: flex;
   margin-left: 2rem;  
   position: fixed;
   top:10;
-}
+} */
 
-.image img {
+/* .image img {
   width: 100%;
   height: auto;
 
-}
+} */
 
-.card_div {
+/* .card_div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: 0 auto;
-  
-}
+} */
 .cards {
-  background-color: #f5f5f5;
+  background-color: #f5f5f5ee;
   text-align: center;
-  width: 38vw;
+  width: 35vw;
   margin-bottom: 3.5rem;
-  font-size: 1.2rem;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-  display: flex;
-  flex-direction: column;
+  font-size: 1.4rem;
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  /* display: flex;
+  flex-direction: column; */
   align-items: center;
+  border-radius: 2rem;
+  position: relative;
+  margin: 8rem auto;
+  }
+
+.cards::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  right: -40px;
+  bottom: -40px;
+  background-image: url(../assets/images/cards-background.png);
   border-radius: 4rem;
+  z-index: -1;
 }
+
 
 h2 {
   font-size: 2.2rem;
-  margin-top: 2.5rem;
+  padding: 2rem;
 }
 .short-text {
-  --max-lines: 5;
+  --max-lines: 6;
   --line-height: 1.4;
   max-height: calc(var(--max-lines) * 1em * var(--line-height));
   line-height: var(--line-height);
@@ -150,14 +164,14 @@ h2 {
   width: 100%;
   bottom: 0;
   pointer-events: none;
-  background: linear-gradient(to bottom, transparent, #f5f5f5);
+  background: linear-gradient(to bottom, transparent, rgba(245, 245, 245, 0.719));
 }
 
 .read_more_button {
   appearance: none;
   background-color: hsl(277, 47%, 67%);
-  padding: 0.8rem 2rem;
-  font-size: 1.1rem;
+  padding: 0.8rem 1rem;
+  font-size: 1.35rem;
   border: none;
   border-radius: 0.8rem;
   align-self: center;
@@ -203,16 +217,19 @@ h2 {
 }
 
 .input_title {
-  width: 40vw;
+  width: 33vw;
   border:none;
   font-size: 1.5rem;
+  border-radius: .8rem;
+  border: .05rem solid black;
 }
 
 textarea {
-  width: 40vw;
+  width: 32vw;
   height: 50vh;
-  border:none;
+  border-radius: .8rem;
+  border: .05rem solid black;
   resize: none;
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
 </style>

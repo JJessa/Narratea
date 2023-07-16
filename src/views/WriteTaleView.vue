@@ -11,8 +11,6 @@
         </form>
       </div>
   </div>
-
-
   <Footer />
 </template>
 
@@ -36,7 +34,7 @@ async function createPost(){
     titulo: title.value,
     relato: description.value
   })
-  location.reload()
+  window.location.href = "/Stories";
 }catch(error){
   console.log(error)
 }
@@ -96,6 +94,7 @@ textarea {
   resize: none;
   text-align: justify;
   padding: 2rem;
+  font-size: 1.4rem;
 }
 
 input::placeholder {
@@ -119,6 +118,7 @@ button {
  .btn-padding {
   padding: 2rem;
  }
+
 
  @media (max-width: 850px) {
   .create_div {
