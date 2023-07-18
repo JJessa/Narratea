@@ -169,7 +169,7 @@ h2 {
 
 .read_more_button {
   appearance: none;
-  background-color: hsl(277, 47%, 67%);
+  background-color: #dfa3e6d8;
   padding: 0.8rem 1rem;
   font-size: 1.35rem;
   border: none;
@@ -208,14 +208,24 @@ h2 {
   border: none;
   border-radius: 0.8rem;
   cursor: pointer;
-  background-color: #91CAE2;
-
 }
 
+.edit_button {
+  background-color: #3793df;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.delete_button {
+  background-color: #c56dd1;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
 .buttons button:hover {
-  background-color: #CCC;
+  background-color: #58a7f7;
 }
 
+.delete-icon {
+  width: 1.2vw;
+}
 .input_title {
   width: 33vw;
   border:none;
