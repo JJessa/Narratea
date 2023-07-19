@@ -113,11 +113,19 @@ button {
   font-size: 1.3rem;
   border: none;
   border-radius: 0.8rem;
- }
+  display: inline-block;
+	transition-duration: .3s;
+	transition-property: transform;
+  cursor: pointer;
+}
 
- .btn-padding {
+button:hover {
+  transform: translateY(-5px);
+}
+
+.btn-padding {
   padding: 2rem;
- }
+}
 
 
  @media (max-width: 850px) {

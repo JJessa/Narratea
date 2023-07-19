@@ -121,7 +121,15 @@ button {
   border-radius: 0.8rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  cursor: pointer;
+  display: inline-block;
+	transition-duration: .3s;
+	transition-property: transform;
  }
+
+ button:hover {
+  transform: translateY(-5px);
+}
 
  @media (max-width: 850px)  {
   .div_total {

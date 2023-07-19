@@ -208,6 +208,9 @@ h2 {
   border: none;
   border-radius: 0.8rem;
   cursor: pointer;
+  display: inline-block;
+	transition-duration: .3s;
+	transition-property: transform;
 }
 
 .edit_button {
@@ -220,7 +223,7 @@ h2 {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
 }
 .buttons button:hover {
-  background-color: #58a7f7;
+  transform: translateY(-5px);
 }
 
 .delete-icon {
