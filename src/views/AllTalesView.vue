@@ -176,10 +176,12 @@ h2 {
   border-radius: 0.8rem;
   align-self: center;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 .read_more_button:hover {
-  background-color: #CCC;
+  /* background-color: #CCC; */
+  transform: scale(0.95);
 }
 
 .read_more_button::before {
