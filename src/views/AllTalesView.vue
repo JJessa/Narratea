@@ -247,4 +247,57 @@ textarea {
   resize: none;
   font-size: 1.4rem;
 }
+
+@media (max-width: 819px) {
+  h2 {
+  font-size: 1.2rem;
+  padding: .5rem;
+}
+
+.cards {
+  width: 65vw;
+  font-size: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cards::before {
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 3rem;
+}
+
+.buttons button {
+  font-size: 1rem;
+}
+
+.read_more_button {
+  font-size: 1.15rem;
+}
+
+}
+@media (min-width: 820px) and (max-width: 1024px) {
+
+h2 {
+  font-size: 2rem;
+}
+.cards {
+  width: 65vw;
+  margin-bottom: 3.5rem;
+  font-size: 1.4rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.cards::before {
+  top: -35px;
+  left: -35px;
+  right: -35px;
+  bottom: -35px;
+}
+}
+
 </style>
