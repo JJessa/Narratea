@@ -124,7 +124,6 @@ import Footer from '../components/Footer.vue'
   height: 34%;
 }
 
-
 .children_divs p {
   margin-top: 0;
   padding-left: 1rem;
@@ -133,7 +132,7 @@ import Footer from '../components/Footer.vue'
   text-align: center;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 819px) {
 
   .parent_div {
   height: 100vh;
@@ -173,5 +172,12 @@ import Footer from '../components/Footer.vue'
  #stories_children_div_title {
   margin: .5rem auto;
  }
+}
+
+@media (min-width: 820px) and (max-width: 1024px) {
+  .children_divs {
+  width: 35vw;
+  height: auto;
+}
 }
 </style>
